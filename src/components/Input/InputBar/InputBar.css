@@ -1,0 +1,9 @@
+input {
+  width: 50%;
+  margin: 1em auto;
+  /* border: 1px red solid; */
+}
+
+button {
+  border: 2px red solid;
+}
