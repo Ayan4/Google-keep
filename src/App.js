@@ -1,13 +1,20 @@
 import React from "react";
 import "./App.css";
-import InputBar from "./components/Input/InputBar/InputBar";
-import MainInput from "./components/Input/MainInput/MainInput";
+import InputBox from "./components/Input/InputBox";
+import { useState } from "react";
 
 function App() {
+  const [allNotes, setAllNotes] = useState([]);
+
+  const addNoteHandler = note => {
+    setAllNotes([...allNotes, note]);
+  };
+
+  console.log(allNotes);
+
   return (
     <div className="App">
-      <InputBar />
-      <MainInput />
+      <InputBox addNote={addNoteHandler} />
     </div>
   );
 }

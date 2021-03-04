@@ -1,7 +1,13 @@
+.input-bar {
+  width: 60%;
+  margin: 0 auto;
+  border: 1px red solid;
+  border-radius: 10px;
+}
+
 input {
-  width: 50%;
+  width: 80%;
   margin: 1em auto;
-  /* border: 1px red solid; */
 }
 
 button {

@@ -1,12 +1,11 @@
 import "./InputBar.css";
 
-function InputBar() {
+function InputBar({ onClick }) {
   return (
     <div>
-      <form action="">
-        <input placeholder="take a note" type="text" />
+      <form className="input-bar" action="">
+        <input onClick={onClick} placeholder="take a note" type="text" />
       </form>
-      <button>milk me</button>
     </div>
   );
 }
