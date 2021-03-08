@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import InputBox from "./components/Input/InputBox";
+import Header from "./components/Header";
 import { useState } from "react";
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
   console.log(allNotes);
 
   return (
-    <div className="App">
+    <div className="container w-4/5 mx-auto border border-red-500 px-4">
+      {/* <Header /> */}
       <InputBox addNote={addNoteHandler} />
     </div>
   );
