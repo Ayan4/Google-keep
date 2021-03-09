@@ -1,6 +1,6 @@
 import { useState } from "react";
 import InputBar from "./InputBar/InputBar";
-import MainInput from "./MainInput/MainInput";
+import InputModal from "./InputModal/InputModal";
 
 function InputBox({ addNote }) {
   const [showInput, setShowInput] = useState(false);
@@ -14,10 +14,18 @@ function InputBox({ addNote }) {
     addNote(note);
   };
 
+  const hideInputModal = () => {
+    setShowInput(false);
+  };
+
   return (
-    <div>
+    <div className="mb-6">
       {!showInput ? <InputBar onClick={mainInputHandler} /> : ""}
-      {showInput ? <MainInput addTask={addTaskHandler} /> : ""}
+      {showInput ? (
+        <InputModal hideInputModal={hideInputModal} addTask={addTaskHandler} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

@@ -1,7 +1,10 @@
 function Header() {
   return (
     <div className="border border-red-500 py-8 flex flex-col lg:flex-row items-center justify-center">
-      <a href="#" className="border border-green-500">
+      <a
+        href="https://tailwindcss.com/docs/text-color"
+        className="border border-green-500"
+      >
         NoteDown
       </a>
       <input
