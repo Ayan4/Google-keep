@@ -7,6 +7,7 @@ function InputBox({ addNote }) {
 
   const mainInputHandler = e => {
     setShowInput(true);
+    console.log("first input clicked");
   };
 
   const addTaskHandler = note => {
@@ -20,11 +21,10 @@ function InputBox({ addNote }) {
 
   return (
     <div className="mb-6">
-      {!showInput ? <InputBar onClick={mainInputHandler} /> : ""}
-      {showInput ? (
-        <InputModal hideInputModal={hideInputModal} addTask={addTaskHandler} />
+      {!showInput ? (
+        <InputBar onClick={mainInputHandler} />
       ) : (
-        ""
+        <InputModal hideInputModal={hideInputModal} addTask={addTaskHandler} />
       )}
     </div>
   );

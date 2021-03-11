@@ -12,13 +12,27 @@ function App() {
     setAllNotes([...allNotes, note]);
   };
 
-  console.log(allNotes);
+  const deleteNoteHandler = e => {
+    const deleteNoteId = e.target.id;
+    const updatedNotesArr = allNotes.filter(item => item.id !== deleteNoteId);
+    setAllNotes(updatedNotesArr);
+  };
+
+  const pinHandler = () => {
+    console.log("pinned");
+  };
+
+  // console.log(allNotes);
 
   return (
-    <div className="border border-red-500 container w-4/5 mx-auto px-4">
+    <div className="container mx-auto app">
       {/* <Header /> */}
       <InputBox addNote={addNoteHandler} />
-      <AllNotes allNotesArr={allNotes} />
+      <AllNotes
+        pinHandler={pinHandler}
+        deleteHandler={deleteNoteHandler}
+        allNotesArr={allNotes}
+      />
     </div>
   );
 }

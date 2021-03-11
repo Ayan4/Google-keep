@@ -1,5 +1,4 @@
-.App {
-  text-align: center;
-  max-width: 80%;
-  margin: 0 auto;
+.app {
+  border: 1px red solid;
+  max-width: 1200px;
 }

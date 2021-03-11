@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        cus: "7px 7px 14px #d5d5d5, -7px -7px 14px #ebebeb"
+        cus: "7px 7px 8px #d5d5d5, -7px -7px 8px #ebebeb"
       }
     }
   },

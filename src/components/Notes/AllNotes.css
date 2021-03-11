@@ -1,0 +1,46 @@
+.hide {
+  visibility: hidden;
+}
+
+.noteCard:hover .hide {
+  visibility: visible;
+}
+
+.tooltip::after {
+  content: "I am after";
+  position: absolute;
+  top: 10px;
+  /* left: 50%; */
+}
+
+.note {
+  min-height: 40px;
+}
+
+[data-tooltip] {
+  position: relative;
+  /* cursor: default; */
+}
+
+[data-tooltip]::after {
+  position: absolute;
+  width: 50px;
+  /* left: calc(50% - 70px); */
+  right: -15px;
+  content: attr(data-tooltip);
+  bottom: 125%;
+  text-align: center;
+  box-sizing: border-box;
+  color: white;
+  background: black;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  display: none;
+  opacity: 0.7;
+}
+
+[data-tooltip]:hover::after {
+  display: block;
+}

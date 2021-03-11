@@ -29,6 +29,7 @@ function InputModal({ addTask, hideInputModal }) {
   return (
     <div className="flex justify-center">
       <form
+        autocomplete="off"
         className="border main-form shadow-cus rounded-lg mt-20 w-3/6 px-4 py-1"
         action=""
         ref={node}
