@@ -17,46 +17,58 @@ function App() {
   const deleteNoteHandler = e => {
     const deleteNoteId = e.target.id;
     const updatedNotesArr = allNotes.filter(item => item.id !== deleteNoteId);
+    const updatedPinnedArr = pinnedNotes.filter(
+      item => item.id !== deleteNoteId
+    );
     setAllNotes(updatedNotesArr);
+    setPinnedNotes(updatedPinnedArr);
   };
 
+  // Pinning the Note
   const pinHandler = noteId => {
-    const pinnedNote = allNotes.map(item => {
+    // for all notes
+    const updatedAllNotesArr = allNotes.map(item => {
       if (item.id === noteId) {
         item.pinned = true;
       }
       return item;
     });
 
-    const pinnedNotesArr = pinnedNote.filter(item => item.pinned === true);
-    const updatedAllNotesArr = pinnedNote.filter(item => item.pinned !== true);
+    updatedAllNotesArr.map(
+      item => item.pinned && setPinnedNotes([...pinnedNotes, item])
+    );
 
-    const updatedPinnedArr = [];
-    pinnedNotesArr.map(item => updatedPinnedArr.push(item));
-    console.log(updatedPinnedArr);
+    const allNotesLessPinned = updatedAllNotesArr.filter(
+      item => item.pinned !== true
+    );
 
-    // setPinnedNotes(pinnedNotesArr);
-    // console.log(pinnedNotesArr);
-    setAllNotes(updatedAllNotesArr);
-    // console.log(updatedAllNotesArr);
+    setAllNotes(allNotesLessPinned);
+
+    // for pinned notes
+    // const updatedPinnedArr = pinnedNotes.map(item => {
+    //   if (item.id === noteId) {
+    //     item.pinned = false;
+    //   }
+    //   return item;
+    // });
+
+    // updatedPinnedArr.map(item => console.log(item));
   };
-
-  // console.log(allNotes);
 
   return (
     <div className="container mx-auto app">
       {/* <Header /> */}
       <InputBox addNote={addNoteHandler} />
-      {/* {pinnedNotes.length > 0 ? (
+      {pinnedNotes.length > 0 ? (
         <PinnedNotes
           pinHandler={pinHandler}
           deleteHandler={deleteNoteHandler}
           pinnedNotesArr={pinnedNotes}
-          setAllNotes={setAllNotes}
+          setAllNotes={setPinnedNotes}
         />
       ) : (
         ""
-      )} */}
+      )}
       {allNotes.length > 0 ? (
         <AllNotes
           pinHandler={pinHandler}
