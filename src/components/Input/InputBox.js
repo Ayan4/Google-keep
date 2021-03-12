@@ -7,7 +7,6 @@ function InputBox({ addNote }) {
 
   const mainInputHandler = e => {
     setShowInput(true);
-    console.log("first input clicked");
   };
 
   const addTaskHandler = note => {
@@ -20,7 +19,7 @@ function InputBox({ addNote }) {
   };
 
   return (
-    <div className="mb-6">
+    <div className="mb-10">
       {!showInput ? (
         <InputBar onClick={mainInputHandler} />
       ) : (

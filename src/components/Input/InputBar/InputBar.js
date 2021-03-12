@@ -2,7 +2,7 @@ function InputBar({ onClick }) {
   return (
     <div className="flex justify-center">
       <form
-        className="shadow-cus rounded-lg mt-20 w-3/6 px-4 py-1"
+        className="shadow-cus bg-white rounded-lg mt-20 w-3/6 px-4 py-1"
         action=""
         onClick={onClick}
       >
